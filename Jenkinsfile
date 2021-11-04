@@ -2,10 +2,12 @@ node{
 stage('cloning')
   
 {
-echo 'hello world'
+git 'https://github.com/HatemTemimi/TimesheetCICD'
 
 }
-    stage('Cmpl & Pkg') {}
-    stage ('dploy') {}
+    stage('Cmpl & Pkg') {
+
+    sh 'mvn -DskipTests=true package'
+    }
 
 }
