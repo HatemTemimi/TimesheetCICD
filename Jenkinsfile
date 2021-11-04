@@ -23,10 +23,10 @@ node{
                           ]], 
                           credentialsId: 'nexus2', 
                           groupId: 'tn.esprit.spring',
-                          nexusUrl: 'localhost:8081/nexus/',
+                          nexusUrl: 'localhost:8081/nexus',
                           nexusVersion: 'nexus2', 
                           protocol: 'http', 
-                          repository: 'http://localhost:8081/nexus/content/repositories/timesheet-snapshots/', 
+                          repository: 'timesheet-snapshots/', 
                           version: '1.0'
     
     }
