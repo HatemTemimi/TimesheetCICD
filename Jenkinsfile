@@ -14,7 +14,16 @@ node{
 
     stage('Artifact Deploy'){
     
-    sh 'mvn -DskipTests=true deploy'
+    nexusArtifactUploader artifacts: [[artifactId: 'timesheet',
+                          classifier: '', file: 'target/timesheet1.0.war', 
+                          type: 'war']], 
+                          credentialsId: 'nexus2', 
+                          groupId: 'tn.esprit.spring',
+                          nexusUrl: 'localhost:8081/nexus/',
+                          nexusVersion: 'nexus2', 
+                          protocol: 'http', 
+                          repository: 'timesheet-snapshots/', 
+                          version: '1.0'
     
     }
 

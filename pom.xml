@@ -12,7 +12,8 @@
 	<artifactId>timesheet</artifactId>
 	<version>1.0</version>
 	<name>timesheet</name>
-	<description>timesheet</description>
+  <description>timesheet</description>
+  <packaging>war</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -151,26 +152,29 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <configuration>
+        <attachClasses>true</attachClasses>
+        <webXml>target/timesheet-1.0/WEB-INF/web.xml</webXml>
+        <webResources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <filtering>true</filtering>
+            </resource>
+        </webResources>
+    </configuration>
+</plugin>
+
       </plugins>
     </pluginManagement>
   </build>
 
- <distributionManagement>
-    <snapshotRepository>
-      <id>snapshots</id>
-      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
-       <snapshots>                  
-                <enabled>true</enabled>   
-      </snapshots>
-    </snapshotRepository>
-    <repository>
-      <id>releases</id>
-      <url>http://localhost:8081/nexus/content/repositories/releases</url>
-    </repository>
-  </distributionManagement>
-
-
-
-
+<distributionManagement>
+  <repository>
+    <id>timesheet-snapshots</id>
+    <url>http://localhost:8081/nexus/content/repositories/timesheet-snapshots</url>
+  </repository>
+</distributionManagement>
 
 </project>
