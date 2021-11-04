@@ -26,7 +26,7 @@ node{
                           nexusUrl: 'localhost:8081/nexus/',
                           nexusVersion: 'nexus2', 
                           protocol: 'http', 
-                          repository: 'timesheet-snapshots/', 
+                          repository: 'http://localhost:8081/nexus/content/repositories/timesheet-snapshots/', 
                           version: '1.0'
     
     }
