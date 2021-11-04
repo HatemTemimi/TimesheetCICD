@@ -14,9 +14,13 @@ node{
 
     stage('Artifact Deploy'){
     
-    nexusArtifactUploader artifacts: [[artifactId: 'timesheet',
-                          classifier: '', file: 'target/timesheet1.0.war', 
-                          type: 'war']], 
+    nexusArtifactUploader artifacts: 
+                          [[
+                          artifactId: 'timesheet',
+                          classifier: '', 
+                          file: '/var/lib/jenkins/workspace/MyPipe/target/timesheet-1.0.war', 
+                          type: 'war'
+                          ]], 
                           credentialsId: 'nexus2', 
                           groupId: 'tn.esprit.spring',
                           nexusUrl: 'localhost:8081/nexus/',
